@@ -14,6 +14,6 @@ http://cvxr.com/cvx/
 2. Install libsvm
 http://www.csie.ntu.edu.tw/~cjlin/libsvm/
 
-3. Unzip RIPR_dist and add all its subfolders to the path
+3. Download VIPR from githib and add all its subfolders to the path
 
-4. Run the script RIPR_dist_V2/exp/reg_uci_concrete/RunVIPR.m
+4. Run the script VIPR/exp/reg_uci_concrete/RunVIPR.m
