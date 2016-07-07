@@ -1,0 +1,24 @@
+Each folder represents one set of data for classification.
+
+Format of folder names: ‘task_source_dsetname’
+- task is ‘cls’ for classification
+- source is artificial, auton, mobilize or uci, depending on where we obtained the data
+- dsetname is the name of the dataset, with words separated by the ’-’ character
+
+Each folder contains one or more tables, each containing data for a single classification talk. I have included both .csv and .mat files named files is ‘dsetname_tablename.csv’ and ‘dsetname_tablename.mat’, respectively.
+
+The format of the files is described below:
+
+1. .csv files
+The table header contains feature names. Output is the last column in the dataset.
+
+2. .mat files
+Features = Names of features (including output). The output is last.
+X = Design matrix, representing values of the samples for each of the features. Rows are samples, columns are features.
+Y = The output that needs to be classified. Typically, this is binary (0/1).
+
+clear;
+D = importdata('alert-artifact-rr.csv');
+X = D.data(:,1:end-1);
+Features = D.textdata';
+clear D;

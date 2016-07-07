@@ -1,0 +1,9 @@
+test_percentage = 30;
+num_samples = size(X,1)*test_percentage/100;
+permuted_idx = randperm(size(X,1));
+idx_test = permuted_idx(1:num_samples);
+idx_train = setdiff(1:size(X,1),idx_test);
+Xtrain = X(idx_train,:);
+Ytrain = Y(idx_train,:);
+Xtest = X(idx_test,:);
+Ytest = Y(idx_test,:);
