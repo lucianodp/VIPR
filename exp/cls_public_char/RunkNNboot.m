@@ -1,8 +1,6 @@
 clear;
 load('letter_26class.mat');
 load('letter_26classTest.mat');
-X = double(X)'; Y = double(Y)';
-XTest = XTest'; YTest = YTest';
 
 sel = true;
 MetricEvalFunctions{1} = @MetricEvalAccuracy;

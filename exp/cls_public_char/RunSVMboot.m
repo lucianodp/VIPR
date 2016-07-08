@@ -1,7 +1,5 @@
 clear;
 load('MNIST.mat');
-X = X'; Y = Y';
-XTest = XTest'; YTest = YTest';
 
 sel = false;
 MetricEvalFunctions{1} = @MetricEvalAccuracy;
