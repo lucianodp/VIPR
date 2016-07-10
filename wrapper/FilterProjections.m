@@ -1,4 +1,4 @@
-function [PiFiltered] = FilterProjections(Pi, NumP, X, Y)
+function [PiFiltered] = FilterProjections(X, Y, Pi, NumP)
 %FILTERPROJECTIONS = Returns the most informative NumP projections
 % in the set, according to correlation of features to output
     if NumP > length(Pi)

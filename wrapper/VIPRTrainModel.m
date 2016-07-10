@@ -24,8 +24,9 @@ function [VIPRmodel] = VIPRTrainModel(Solver, X, Y, d_range, P, ComputeLoss, Los
 %   - Xsub: the features of the points assigned to the projection
 %   - Ysub: the labels of the points assigned to the projection
 %   - Model: the solver trained on the projection
+    MaximumFeatures = 50;
     MaximumProjections = 1000;
-    [L, Proj] = ComputeLossMatrix(ComputeLoss, X, Y, d_range, LossParams, MaximumProjections);
+    [L, Proj] = ComputeLossMatrix(ComputeLoss, X, Y, d_range, LossParams, MaximumFeatures, MaximumProjections);
     [IPE] = IPEtrain(L,Proj,P,SelectionMethod,SelectionParams);
     VIPRmodel.X = X;
     VIPRmodel.Y = Y;
