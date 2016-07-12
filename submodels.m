@@ -46,6 +46,11 @@ if isempty(user_selected_features) == 0
     end
 end
 
+% assign 0's to Y if it's empty
+if isempty(Y) == 1
+    Y = zeros(size(X,1),1);
+end
+
 %% Divid the data to training and test set
 doTest = 0;
 if withhold >= 10 && withhold <= 50
