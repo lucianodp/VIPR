@@ -65,7 +65,7 @@ switch expname
         %Xtest=(TX*(Xtest'-repmat(muX,1,size(Xtest',2))))';
 end
 
-d = 15;
+d = 2;
 K = 3; % parameter for k-NN classifiers
 [L, Proj] = ComputeKNNlossMatrix(Xtrain,Ytrain,K,d);
 k = 10;
@@ -78,6 +78,6 @@ Yhat = knnclassify(Xtest, Xtrain, Ytrain);
 knn_accuracy = mean(Yhat == Ytest);
 
 %%
-idx = setdiff(1:size(Xtest,2),[1:14,16,18:23,25:30,33:35]);
-Yhat3 = knnclassify(Xtest(:,idx), Xtrain(:,idx), Ytrain);
-knn_accuracy2 = mean(Yhat2 == Ytest);
+%idx = setdiff(1:size(Xtest,2),[1:14,16,18:23,25:30,33:35]);
+%Yhat3 = knnclassify(Xtest(:,idx), Xtrain(:,idx), Ytrain);
+%knn_accuracy2 = mean(Yhat2 == Ytest);
