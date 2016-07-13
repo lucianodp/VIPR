@@ -17,4 +17,6 @@ featureid = GetFeatureId(Features, featurename);
 if (featureid>0)
     [VIPRmodel2] = VIPRaddFeature(VIPRmodel, 1, featureid, featurename, ComputeLoss, LossParams, Solver);
     [FigHandles2] = VIPRPlotModel(VIPRmodel2);
+    [VIPRmodel3] = VIPRremoveFeature(VIPRmodel2, 1, featureid, ComputeLoss, LossParams, Solver);
+    [FigHandles3] = VIPRPlotModel(VIPRmodel3);
 end
