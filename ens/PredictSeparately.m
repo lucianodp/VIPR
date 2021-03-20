@@ -9,7 +9,7 @@ function [Yhat, Error, MetaError] = PredictSeparately(Ensemble,X,Y)
         Yhat(:,i) = Prediction.Yhat;
         Error(i) = mean(Prediction.Yhat~=Y);
         UsageKnn = Ensemble.Submodel{i}.UsageKnn;
-        ok_hat = logical(knnclassify(X, UsageKnn.X0, UsageKnn.C, 3));
+        ok_hat = logical(UsageKnn.predict(X));
         ok = (Prediction.Yhat==Y);
         MetaError(i) = mean(ok_hat ~= ok);
     end

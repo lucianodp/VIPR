@@ -74,10 +74,6 @@ k = 10;
 [IPEclsTestResults] = RIPRclsTestModel(IPEclsModel, Xtest, Ytest, 1);
 %%
 
-Yhat = knnclassify(Xtest, Xtrain, Ytrain);
+knnmodel = fitcknn(Xtrain, Ytrain);
+Yhat = knnmodel.predict(Xtest);
 knn_accuracy = mean(Yhat == Ytest);
-
-%%
-%idx = setdiff(1:size(Xtest,2),[1:14,16,18:23,25:30,33:35]);
-%Yhat3 = knnclassify(Xtest(:,idx), Xtrain(:,idx), Ytrain);
-%knn_accuracy2 = mean(Yhat2 == Ytest);

@@ -38,9 +38,7 @@ function [Ensemble] = TrainEnsemble(X,Y,k,q)
         end
         fprintf(1,'.');
         %Ensemble.Submodel{i}.UsageSvmCls = svmtrain(X0, C,'kernel_function','rbf');
-        Ensemble.Submodel{i}.UsageKnn = struct;
-        Ensemble.Submodel{i}.UsageKnn.X0 = X0;
-        Ensemble.Submodel{i}.UsageKnn.C = C;
+        Ensemble.Submodel{i}.UsageKnn = fitcknn(X0, C, 'NumNeighbors', 3);
         fprintf(1,' done.\n');
     end
 end

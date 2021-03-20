@@ -1,6 +1,3 @@
-function [knnmodel] = kNNclassificationSolver(X, Y, k)
-    knnmodel = struct;
-    knnmodel.X = X;
-    knnmodel.Y = Y;
-    knnmodel.k = k;
+function [knnmodel] = kNNclassificationSolver(X, Y)
+    knnmodel = fitcknn(X, Y, 'NumNeighbors', 3, 'Distance','euclidean');
 end

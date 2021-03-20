@@ -17,7 +17,7 @@ function [Yhat, EnsemblePrediction] = EnsemblePredict(Ensemble,X)
         % Determine which points the submodel should be used for
         %ok = svmclassify(Ensemble.Submodel{i}.UsageSvmCls, X);
         UsageKnn = Ensemble.Submodel{i}.UsageKnn;
-        ok = logical(knnclassify(X, UsageKnn.X0, UsageKnn.C, 1));
+        ok = logical(UsageKnn.predict(X));
         [Prediction] = ClassifierPredict(Ensemble.Submodel{i}.ClsModel,X(:,Ensemble.Submodel{i}.ProjDim));
         num_ok = num_ok + double(ok);
         score_ok = score_ok + CopySelRows(Prediction.scores,ok);
