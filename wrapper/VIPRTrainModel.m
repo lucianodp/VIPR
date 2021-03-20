@@ -45,7 +45,6 @@ function [VIPRmodel] = VIPRTrainModel(Solver, X, Y, d_range, P, ComputeLoss, Los
         VIPRmodel.Submodel{p}.PointsIdx = VIPRmodel.B(:,SelectedProjectionIdx(p));
         VIPRmodel.Submodel{p}.Xsub = VIPRmodel.X(VIPRmodel.Submodel{p}.PointsIdx, VIPRmodel.Submodel{p}.ProjDim);
         VIPRmodel.Submodel{p}.Ysub = VIPRmodel.Y(VIPRmodel.Submodel{p}.PointsIdx,:);
-        VIPRmodel.Submodel{p}.Model = Solver(VIPRmodel.X(:,VIPRmodel.Submodel{p}.ProjDim), VIPRmodel.Y);
-        %VIPRregressionModel.Submodel{p}.Model = Solver(VIPRregressionModel.Submodel{p}.Xsub, VIPRregressionModel.Submodel{p}.Ysub);
+        VIPRmodel.Submodel{p}.Model = Solver(VIPRmodel.Submodel{p}.Xsub, VIPRmodel.Submodel{p}.Ysub);
     end
 end
