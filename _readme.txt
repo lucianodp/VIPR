@@ -11,9 +11,6 @@ Getting started:
 1. Install the cvx package
 http://cvxr.com/cvx/
 
-2. Install libsvm
-http://www.csie.ntu.edu.tw/~cjlin/libsvm/
+2. Download VIPR from githib and add all its subfolders to the path
 
-3. Download VIPR from githib and add all its subfolders to the path
-
-4. Run the script VIPR/exp/reg_uci_concrete/RunVIPR.m
+3. Run the script VIPR/exp/reg_uci_concrete/RunVIPR.m
